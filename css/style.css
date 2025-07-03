@@ -1,1 +1,296 @@
+/* Estilo base para todas as páginas */
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.banner {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+img:not(.banner) {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: #36CC37; /* Verde Kick Sauber (F1) */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Estilo padrão do menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  display: block;
+}
+
+.menu a:hover {
+  background-color: #222;
+  border-radius: 5px;
+  color: #00ffcc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a.ativo {
+  background-color: #ffffff;
+  color: #111;
+}
+
+/* Ícone hambúrguer (visível no mobile) */
+.menu-toggle {
+  display: none; /* padrão escondido para desktop */
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Responsivo: a partir de 768px esconde o menu hamburguer */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: relative; /* fluxo normal */
+    margin: 0 auto; /* centraliza horizontalmente */
+    width: fit-content;
+  }
+
+  .menu-toggle.fixar {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    margin: 0;
+    background-color: #111;
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute; /* posição inicial: absoluta para aparecer perto */
+    top: 60px; /* abaixo do botão fixo (ajuste conforme o botão) */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111;
+    width: 80%;
+    border-radius: 5px;
+    z-index: 999;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle.fixar + .menu {
+    position: fixed; /* quando botão fixo, menu também fixo */
+    top: 60px; /* logo abaixo do botão */
+    left: 20px; /* alinhado à esquerda, junto do botão */
+    transform: none;
+    width: 200px; /* largura fixa, ajuste se quiser */
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+}
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgb(202, 202, 202);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+h1 {
+  color: #111;
+}
+
+.imagem-conteudo {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Botão de voltar ao topo */
+#topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00D084;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#topo:hover {
+  background: #00b874;
+}
+
+/* Formulário de contato */
+.formulario {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formulario button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background-color: #36CC37;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #2ea52e;
+}
+
+.carrossel {
+  max-width: 900px;
+  max-height: 300px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: flex;
+  width: 50%;
+  animation: slide 15s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Animação automática */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+.video {
+  margin-top: 2rem;
+}
+
+.video iframe {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+/* Cores específicas podem ser sobrepostas por página via classe no body */
+body.f1     header { background-color: #36CC37; } /* Kick Sauber */
+body.f1     {background-color: #36CC37; }
+body.f2     header { background-color: #FFB800; } /* Amarelo MP Motorsport */
+body.f2     {background-color: #FFB800; }
+body.f3     header { background-color: #00205B; } /* Azul escuro Trident */
+body.f3     {background-color: #00205B; }
+.f3 .menu   {background-color: #A40020;}
+body.f4     header { background-color: #E10600; } /* Vermelho Prema Racing */
+body.f4     {background-color: #E10600; }
+.f4 .menu {background-color: #1ca549;}
+body.kart   header { background-color: #333333; } /* Neutro escuro para Kart */
+body.kart   {background-color: #333333; }
+.kart .menu {background-color: #FE5820;}
