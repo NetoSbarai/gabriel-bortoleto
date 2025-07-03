@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a fanpage Gabriel Bortoleto">
+    <link rel="icon" href="imagens/favicon.ico">
+    <title>Gabriel Bortoleto | Contato</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Ícone hambúrguer -->
+  <nav id="menu" class="menu">
+    <ul>
+      <li><a href="index.html">Fórmula 1</a></li>
+      <li><a href="formula2.html">Fórmula 2</a></li>
+      <li><a href="formula3.html">Fórmula 3</a></li>
+      <li><a href="formula4.html">Fórmula 4</a></li>
+      <li><a href="kart.html">Kart</a></li>
+      <li><a href="contato.html" class="ativo">Contato</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <main>
+    <section class="formulario">
+      <h1>Fale conosco</h1>
+      <form id="formContato" onsubmit="return validarFormulario()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+      <p id="mensagem-status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gabriel Bortoleto Fanpage | Desenvolvido para fins educacionais</p>
+  </footer>
+
+  <button id="topo" onclick="voltarTopo()">Topo</button>
+  <script src="js/script.js"></script>
+</body>
+</html>
