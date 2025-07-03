@@ -47,3 +47,14 @@ window.addEventListener("scroll", function () {
     menuToggle.classList.remove("fixar");
   }
 });
+
+// Barra de progresso de leitura com carro
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  const progressBar = document.getElementById('barra-progresso');
+  if (progressBar) {
+    progressBar.style.width = scrollPercent + '%';
+  }
+});
